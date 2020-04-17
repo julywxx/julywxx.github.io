@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="前言：​    经过上一篇博文的了解，我们已经知道了hexo的作用。我相信一定有小伙伴会有疑问，什么是GitHub？我们为什么要把hexo部署到GitHub上呢？其实，如果我们不对我们编辑好的博文进行部署的话，那么我们的内容就只能留在本地的网址“孤芳自赏”啦，为了能让更多的人浏览到我们的博文，我们需要把内容统统部署到远端，也就是GitHub上。接下来，我们一起去学习一下如何部署吧！ 动手实验一、准">
@@ -92,7 +92,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
+    <div class="toggle" aria-label="Cambiar a barra de navegación">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -122,12 +122,12 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Startseite</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archiv</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archivo</a>
 
   </li>
   </ul>
@@ -179,10 +179,10 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <span class="post-meta-item-text">Publicado el</span>
               
 
-              <time title="Erstellt: 2020-04-09 17:52:59 / Geändert am: 18:39:59" itemprop="dateCreated datePublished" datetime="2020-04-09T17:52:59+08:00">2020-04-09</time>
+              <time title="Creado por: 2020-04-09 17:52:59 / Modificado por: 18:39:59" itemprop="dateCreated datePublished" datetime="2020-04-09T17:52:59+08:00">2020-04-09</time>
             </span>
 
           
@@ -231,14 +231,14 @@
 <div>
 <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>Beitragsautor:  </strong>July
+    <strong>Autor de la entrada:  </strong>July
   </li>
   <li class="post-copyright-link">
-    <strong>Beitragslink: </strong>
+    <strong>Enlace a la entrada: </strong>
     <a href="http://yoursite.com/2020/04/09/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%EF%BC%9Ahexo%E9%83%A8%E7%BD%B2%E5%88%B0GitHub/" title="连载系列三：hexo部署到GitHub">http://yoursite.com/2020/04/09/连载系列三：hexo部署到GitHub/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>Urheberrechtshinweis:  </strong>Alle Artikel in diesem Blog sind unter <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> lizenziert, außer es wird anders angegeben.
+    <strong>Copyright:  </strong>Todos los artículos de este blog están licenciados bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> a no ser que se especifique una licencia adicional.
   </li>
 </ul>
 </div>
@@ -268,6 +268,24 @@
 
           </div>
           
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane gitalk" id="comment-gitalk">
+              <div class="comments" id="gitalk-container"></div>
+            </div>
+            <div class="tab-pane livere" id="comment-livere">
+              
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80OTU0MC8yNjAzMQ=="></div>
+  </div>
+  
+            </div>
+        </div>
+      </div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -305,10 +323,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Inhaltsverzeichnis
+          Tabla de contenidos
         </li>
         <li class="sidebar-nav-overview">
-          Übersicht
+          Inicio
         </li>
       </ul>
 
@@ -329,7 +347,7 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">3</span>
-          <span class="site-state-item-name">Artikel</span>
+          <span class="site-state-item-name">entradas</span>
         </a>
       </div>
   </nav>
@@ -365,7 +383,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">July</span>
 </div>
-  <div class="powered-by">Erstellt mit  <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Creado mediante <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
 
         
@@ -391,7 +409,7 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
@@ -418,6 +436,42 @@
   
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '',
+      clientSecret: '',
+      repo        : '',
+      owner       : '',
+      admin       : [''],
+      id          : 'be62ec4ed13f8fcd55e464f9a961a131',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
 
 </body>
 </html>
