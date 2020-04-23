@@ -82,7 +82,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
+    <div class="toggle" aria-label="تشغيل شريط التصفح">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -112,12 +112,12 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Startseite</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archiv<span class="badge">3</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>الأرشيفات<span class="badge">4</span></a>
 
   </li>
   </ul>
@@ -147,6 +147,71 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/22/%E4%B8%BA%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/rzRYdsXhm2OY.jpg">
+      <meta itemprop="name" content="July">
+      <meta itemprop="description" content="IF you sing a song,i will sing a long!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wxx der blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/22/%E4%B8%BA%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/" class="post-title-link" itemprop="url">为文章添加图片</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">نُشر في</span>
+              
+
+              <time title="أُنشأ: 2020-04-22 16:26:25 / عُدل: 17:40:03" itemprop="dateCreated datePublished" datetime="2020-04-22T16:26:25+08:00">2020-04-22</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="咳咳同资们，开始上课了"><a href="#咳咳同资们，开始上课了" class="headerlink" title="咳咳同资们，开始上课了"></a><strong>咳咳同资们，开始上课了</strong></h4><p>​    在此之前，如果看过前几篇博文的同志们，相信一点能够发现我的博客里出现的一些小问题。大家刚看到我的博文时，看到的默认为页面为左侧导航栏中（ <strong>“Startseite” 首页</strong>）的内容，这时几篇博文的文字和图片都是可以正常显示的，而如果我们要想通过（ <strong>“Archiv“ 目录</strong>）来查看博文时，却看不到图片。嘿嘿，这里要告诉大家，由于本人还是个小白，之前刚操作时出现了一些技术上的问题，那么从这边博文开始，<strong>本人决定痛改前非，重新做文章，教你们正确的方法</strong>！所以，，，<strong>前面的文章你们就先在首页里观看</strong>啦！感谢！</p>
+<p><strong><em>经过测试，发现如下方法有效</em></strong>：</p>
+<p>1、首先把blog目录下的_config.yml里的psot_asset_folder:设置为true</p>
+<p>2、在blog目录下执行git命令:  <strong>npm install hexo-asset-image –save</strong></p>
+<p>3、在git bash here的窗口中执行hexo n “文章名”，此时在post文件夹下看见与文章名同名的文件，且typora自动打开<br>4、将想要上传的图片放到刚刚自动生成的文件夹下<br>5、接下来按照下列格式，写在typora中：</p>
+<p><img src="/2020/04/22/%E4%B8%BA%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/%E6%8D%95%E8%8E%B7.PNG" alt="你想要输入的替代文字"></p>
+<p>做完上面保存typora，然后执行hexo的三步骤hexo clean  g   d  即可看见图片。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/09/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%EF%BC%9Ahexo%E9%83%A8%E7%BD%B2%E5%88%B0GitHub/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -169,10 +234,10 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <span class="post-meta-item-text">نُشر في</span>
               
 
-              <time title="Erstellt: 2020-04-09 17:52:59 / Geändert am: 18:39:59" itemprop="dateCreated datePublished" datetime="2020-04-09T17:52:59+08:00">2020-04-09</time>
+              <time title="أُنشأ: 2020-04-09 17:52:59 / عُدل: 18:39:59" itemprop="dateCreated datePublished" datetime="2020-04-09T17:52:59+08:00">2020-04-09</time>
             </span>
 
           
@@ -251,16 +316,16 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <span class="post-meta-item-text">نُشر في</span>
 
-              <time title="Erstellt: 2020-04-08 15:26:54" itemprop="dateCreated datePublished" datetime="2020-04-08T15:26:54+08:00">2020-04-08</time>
+              <time title="أُنشأ: 2020-04-08 15:26:54" itemprop="dateCreated datePublished" datetime="2020-04-08T15:26:54+08:00">2020-04-08</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
-                <span class="post-meta-item-text">Bearbeitet am</span>
-                <time title="Geändert am: 2020-04-09 13:43:32" itemprop="dateModified" datetime="2020-04-09T13:43:32+08:00">2020-04-09</time>
+                <span class="post-meta-item-text">عُدل في</span>
+                <time title="عُدل: 2020-04-09 13:43:32" itemprop="dateModified" datetime="2020-04-09T13:43:32+08:00">2020-04-09</time>
               </span>
 
           
@@ -342,10 +407,10 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <span class="post-meta-item-text">نُشر في</span>
               
 
-              <time title="Erstellt: 2020-04-08 14:51:26 / Geändert am: 23:05:48" itemprop="dateCreated datePublished" datetime="2020-04-08T14:51:26+08:00">2020-04-08</time>
+              <time title="أُنشأ: 2020-04-08 14:51:26 / عُدل: 23:05:48" itemprop="dateCreated datePublished" datetime="2020-04-08T14:51:26+08:00">2020-04-08</time>
             </span>
 
           
@@ -421,10 +486,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Inhaltsverzeichnis
+          المحتويات
         </li>
         <li class="sidebar-nav-overview">
-          Übersicht
+          عام
         </li>
       </ul>
 
@@ -445,8 +510,8 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
-          <span class="site-state-item-name">Artikel</span>
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">المقالات</span>
         </a>
       </div>
   </nav>
@@ -482,7 +547,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">July</span>
 </div>
-  <div class="powered-by">Erstellt mit  <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  <div class="powered-by">تطبيق الموقع <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
 
         

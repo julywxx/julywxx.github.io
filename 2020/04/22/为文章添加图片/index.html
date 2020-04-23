@@ -20,18 +20,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="hexo简介1.什么是hexo？hexo的作用Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 2.我们为什么要使用hexo？在现在这样一个网络时代，每个人都有言论自由的权力。我们可以随心地在网上分享自己的生活和学习等等。这不得不基于一个平台。有了hexo这个框架，我们就可以搭建一个属于自己的博客，分">
+  <meta name="description" content="咳咳同资们，开始上课了​    在此之前，如果看过前几篇博文的同志们，相信一点能够发现我的博客里出现的一些小问题。大家刚看到我的博文时，看到的默认为页面为左侧导航栏中（ “Startseite” 首页）的内容，这时几篇博文的文字和图片都是可以正常显示的，而如果我们要想通过（ “Archiv“ 目录）来查看博文时，却看不到图片。嘿嘿，这里要告诉大家，由于本人还是个小白，之前刚操作时出现了一些技术上的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建hexo连载系列一：前言">
-<meta property="og:url" content="http://yoursite.com/2020/04/08/%E6%90%AD%E5%BB%BAhexo%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%80%EF%BC%9A%E5%89%8D%E8%A8%80/index.html">
+<meta property="og:title" content="为文章添加图片">
+<meta property="og:url" content="http://yoursite.com/2020/04/22/%E4%B8%BA%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/index.html">
 <meta property="og:site_name" content="wxx der blog">
-<meta property="og:description" content="hexo简介1.什么是hexo？hexo的作用Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 2.我们为什么要使用hexo？在现在这样一个网络时代，每个人都有言论自由的权力。我们可以随心地在网上分享自己的生活和学习等等。这不得不基于一个平台。有了hexo这个框架，我们就可以搭建一个属于自己的博客，分">
-<meta property="article:published_time" content="2020-04-08T06:51:26.607Z">
-<meta property="article:modified_time" content="2020-04-08T15:05:48.916Z">
+<meta property="og:description" content="咳咳同资们，开始上课了​    在此之前，如果看过前几篇博文的同志们，相信一点能够发现我的博客里出现的一些小问题。大家刚看到我的博文时，看到的默认为页面为左侧导航栏中（ “Startseite” 首页）的内容，这时几篇博文的文字和图片都是可以正常显示的，而如果我们要想通过（ “Archiv“ 目录）来查看博文时，却看不到图片。嘿嘿，这里要告诉大家，由于本人还是个小白，之前刚操作时出现了一些技术上的">
+<meta property="og:image" content="http://yoursite.com/2020/04/22/%E4%B8%BA%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/%E6%8D%95%E8%8E%B7.PNG">
+<meta property="article:published_time" content="2020-04-22T08:26:25.000Z">
+<meta property="article:modified_time" content="2020-04-22T09:40:03.198Z">
 <meta property="article:author" content="July">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/04/22/%E4%B8%BA%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/%E6%8D%95%E8%8E%B7.PNG">
 
-<link rel="canonical" href="http://yoursite.com/2020/04/08/%E6%90%AD%E5%BB%BAhexo%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%80%EF%BC%9A%E5%89%8D%E8%A8%80/">
+<link rel="canonical" href="http://yoursite.com/2020/04/22/%E4%B8%BA%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/">
 
 
 <script id="page-configurations">
@@ -44,7 +46,7 @@
   };
 </script>
 
-  <title>搭建hexo连载系列一：前言 | wxx der blog</title>
+  <title>为文章添加图片 | wxx der blog</title>
   
 
 
@@ -150,7 +152,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/08/%E6%90%AD%E5%BB%BAhexo%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%80%EF%BC%9A%E5%89%8D%E8%A8%80/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/22/%E4%B8%BA%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/rzRYdsXhm2OY.jpg">
@@ -163,7 +165,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          搭建hexo连载系列一：前言
+          为文章添加图片
         </h1>
 
         <div class="post-meta">
@@ -174,7 +176,7 @@
               <span class="post-meta-item-text">نُشر في</span>
               
 
-              <time title="أُنشأ: 2020-04-08 14:51:26 / عُدل: 23:05:48" itemprop="dateCreated datePublished" datetime="2020-04-08T14:51:26+08:00">2020-04-08</time>
+              <time title="أُنشأ: 2020-04-22 16:26:25 / عُدل: 17:40:03" itemprop="dateCreated datePublished" datetime="2020-04-22T16:26:25+08:00">2020-04-22</time>
             </span>
 
           
@@ -188,9 +190,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="hexo简介"><a href="#hexo简介" class="headerlink" title="hexo简介"></a>hexo简介</h1><h4 id="1-什么是hexo？hexo的作用"><a href="#1-什么是hexo？hexo的作用" class="headerlink" title="1.什么是hexo？hexo的作用"></a>1.什么是hexo？hexo的作用</h4><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href>Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<h4 id="2-我们为什么要使用hexo？"><a href="#2-我们为什么要使用hexo？" class="headerlink" title="2.我们为什么要使用hexo？"></a>2.我们为什么要使用hexo？</h4><p>在现在这样一个网络时代，每个人都有言论自由的权力。我们可以随心地在网上分享自己的生活和学习等等。这不得不基于一个平台。有了hexo这个框架，我们就可以搭建一个属于自己的博客，分布在不同地区的人，也可以通过你的网址访问到你的主页。从而达到资源共享的目的。在这里，我们可以自由的交流和学习，所以拥有一个博客很必要！</p>
-<p><strong>那么接下来，感兴趣的小伙伴就一起跟着我的步伐，一起开启我们的博客学习之旅吧！</strong></p>
+        <h4 id="咳咳同资们，开始上课了"><a href="#咳咳同资们，开始上课了" class="headerlink" title="咳咳同资们，开始上课了"></a><strong>咳咳同资们，开始上课了</strong></h4><p>​    在此之前，如果看过前几篇博文的同志们，相信一点能够发现我的博客里出现的一些小问题。大家刚看到我的博文时，看到的默认为页面为左侧导航栏中（ <strong>“Startseite” 首页</strong>）的内容，这时几篇博文的文字和图片都是可以正常显示的，而如果我们要想通过（ <strong>“Archiv“ 目录</strong>）来查看博文时，却看不到图片。嘿嘿，这里要告诉大家，由于本人还是个小白，之前刚操作时出现了一些技术上的问题，那么从这边博文开始，<strong>本人决定痛改前非，重新做文章，教你们正确的方法</strong>！所以，，，<strong>前面的文章你们就先在首页里观看</strong>啦！感谢！</p>
+<p><strong><em>经过测试，发现如下方法有效</em></strong>：</p>
+<p>1、首先把blog目录下的_config.yml里的psot_asset_folder:设置为true</p>
+<p>2、在blog目录下执行git命令:  <strong>npm install hexo-asset-image –save</strong></p>
+<p>3、在git bash here的窗口中执行hexo n “文章名”，此时在post文件夹下看见与文章名同名的文件，且typora自动打开<br>4、将想要上传的图片放到刚刚自动生成的文件夹下<br>5、接下来按照下列格式，写在typora中：</p>
+<p><img src="/2020/04/22/%E4%B8%BA%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/%E6%8D%95%E8%8E%B7.PNG" alt="你想要输入的替代文字"></p>
+<p>做完上面保存typora，然后执行hexo的三步骤hexo clean  g   d  即可看见图片。</p>
 
     </div>
 
@@ -206,7 +212,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>رابط المقال: </strong>
-    <a href="http://yoursite.com/2020/04/08/%E6%90%AD%E5%BB%BAhexo%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%80%EF%BC%9A%E5%89%8D%E8%A8%80/" title="搭建hexo连载系列一：前言">http://yoursite.com/2020/04/08/搭建hexo连载系列一：前言/</a>
+    <a href="http://yoursite.com/2020/04/22/%E4%B8%BA%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/" title="为文章添加图片">http://yoursite.com/2020/04/22/为文章添加图片/</a>
   </li>
   <li class="post-copyright-license">
     <strong>حقوق الملكية:  </strong>حميع المقالات في هذه المدوّنة منشورة تحت رخصة <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> إلا عند التنويه بخلافه.
@@ -222,11 +228,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/04/08/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%BA%8C%EF%BC%9Ahexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/" rel="next" title="连载系列二：hexo博客的本地搭建">
-      连载系列二：hexo博客的本地搭建 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/04/09/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%EF%BC%9Ahexo%E9%83%A8%E7%BD%B2%E5%88%B0GitHub/" rel="prev" title="连载系列三：hexo部署到GitHub">
+      <i class="fa fa-chevron-left"></i> 连载系列三：hexo部署到GitHub
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -290,7 +296,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo简介"><span class="nav-number">1.</span> <span class="nav-text">hexo简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-什么是hexo？hexo的作用"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1.什么是hexo？hexo的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-我们为什么要使用hexo？"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">2.我们为什么要使用hexo？</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#咳咳同资们，开始上课了"><span class="nav-number">1.</span> <span class="nav-text">咳咳同资们，开始上课了</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
