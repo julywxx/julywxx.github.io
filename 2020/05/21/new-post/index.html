@@ -20,18 +20,28 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="hexo简介1.什么是hexo？hexo的作用Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 2.我们为什么要使用hexo？在现在这样一个网络时代，每个人都有言论自由的权力。我们可以随心地在网上分享自己的生活和学习等等。这不得不基于一个平台。有了hexo这个框架，我们就可以搭建一个属于自己的博客，分">
+  <meta name="description" content="动手实验一·hexo的环境配置 配置hexo的运行环境，我们需要准备node.js和Git两个软件。（两个软件安装时一路next即可，但需要根据自己操作系统类型和CPU架构（X86、X64）选择不同版本安装） 1. 点击上方的Node.js超链接（建议10以上版本）进行下载即可。成功 后我们可以在cmd窗口输入以下命令：  如成功，则显示版本号。 2. 继续执行如下指令，安装运行在 Node.js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建hexo连载系列一：前言">
-<meta property="og:url" content="http://yoursite.com/2020/04/08/%E6%90%AD%E5%BB%BAhexo%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%80%EF%BC%9A%E5%89%8D%E8%A8%80/index.html">
+<meta property="og:title" content="new post">
+<meta property="og:url" content="http://yoursite.com/2020/05/21/new-post/index.html">
 <meta property="og:site_name" content="wxx der blog">
-<meta property="og:description" content="hexo简介1.什么是hexo？hexo的作用Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 2.我们为什么要使用hexo？在现在这样一个网络时代，每个人都有言论自由的权力。我们可以随心地在网上分享自己的生活和学习等等。这不得不基于一个平台。有了hexo这个框架，我们就可以搭建一个属于自己的博客，分">
-<meta property="article:published_time" content="2020-04-08T06:51:26.607Z">
-<meta property="article:modified_time" content="2020-04-08T15:05:48.916Z">
+<meta property="og:description" content="动手实验一·hexo的环境配置 配置hexo的运行环境，我们需要准备node.js和Git两个软件。（两个软件安装时一路next即可，但需要根据自己操作系统类型和CPU架构（X86、X64）选择不同版本安装） 1. 点击上方的Node.js超链接（建议10以上版本）进行下载即可。成功 后我们可以在cmd窗口输入以下命令：  如成功，则显示版本号。 2. 继续执行如下指令，安装运行在 Node.js">
+<meta property="og:image" content="http://yoursite.com/2020/05/21/new-post/node.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/05/21/new-post/npm.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/05/21/new-post/%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/05/21/new-post/%E5%AE%89%E8%A3%85hexo.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/05/21/new-post/%E6%96%B0%E5%BB%BAhexo%E6%88%90%E5%8A%9F%E5%9B%BE.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/05/21/new-post/md-blog.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/05/21/new-post/%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8D%9A%E5%AE%A2.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/05/21/new-post/%E6%96%B0%E5%BB%BAhexo%E6%88%90%E5%8A%9F%E5%9B%BE.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/05/21/new-post/hexo%E6%88%90%E5%8A%9F%E5%9B%BE.png">
+<meta property="article:published_time" content="2020-05-21T07:53:24.000Z">
+<meta property="article:modified_time" content="2020-05-21T08:35:23.204Z">
 <meta property="article:author" content="July">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/05/21/new-post/node.PNG">
 
-<link rel="canonical" href="http://yoursite.com/2020/04/08/%E6%90%AD%E5%BB%BAhexo%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%80%EF%BC%9A%E5%89%8D%E8%A8%80/">
+<link rel="canonical" href="http://yoursite.com/2020/05/21/new-post/">
 
 
 <script id="page-configurations">
@@ -44,7 +54,7 @@
   };
 </script>
 
-  <title>搭建hexo连载系列一：前言 | wxx der blog</title>
+  <title>new post | wxx der blog</title>
   
 
 
@@ -150,7 +160,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/08/%E6%90%AD%E5%BB%BAhexo%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%80%EF%BC%9A%E5%89%8D%E8%A8%80/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/21/new-post/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/rzRYdsXhm2OY.jpg">
@@ -163,7 +173,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          搭建hexo连载系列一：前言
+          new post
         </h1>
 
         <div class="post-meta">
@@ -174,7 +184,7 @@
               <span class="post-meta-item-text">نُشر في</span>
               
 
-              <time title="أُنشأ: 2020-04-08 14:51:26 / عُدل: 23:05:48" itemprop="dateCreated datePublished" datetime="2020-04-08T14:51:26+08:00">2020-04-08</time>
+              <time title="أُنشأ: 2020-05-21 15:53:24 / عُدل: 16:35:23" itemprop="dateCreated datePublished" datetime="2020-05-21T15:53:24+08:00">2020-05-21</time>
             </span>
 
           
@@ -188,9 +198,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="hexo简介"><a href="#hexo简介" class="headerlink" title="hexo简介"></a>hexo简介</h1><h4 id="1-什么是hexo？hexo的作用"><a href="#1-什么是hexo？hexo的作用" class="headerlink" title="1.什么是hexo？hexo的作用"></a>1.什么是hexo？hexo的作用</h4><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href>Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<h4 id="2-我们为什么要使用hexo？"><a href="#2-我们为什么要使用hexo？" class="headerlink" title="2.我们为什么要使用hexo？"></a>2.我们为什么要使用hexo？</h4><p>在现在这样一个网络时代，每个人都有言论自由的权力。我们可以随心地在网上分享自己的生活和学习等等。这不得不基于一个平台。有了hexo这个框架，我们就可以搭建一个属于自己的博客，分布在不同地区的人，也可以通过你的网址访问到你的主页。从而达到资源共享的目的。在这里，我们可以自由的交流和学习，所以拥有一个博客很必要！</p>
-<p><strong>那么接下来，感兴趣的小伙伴就一起跟着我的步伐，一起开启我们的博客学习之旅吧！</strong></p>
+        <h1 id="动手实验"><a href="#动手实验" class="headerlink" title="动手实验"></a>动手实验</h1><h4 id="一·hexo的环境配置"><a href="#一·hexo的环境配置" class="headerlink" title="一·hexo的环境配置"></a>一·hexo的环境配置</h4><p> 配置hexo的运行环境，我们需要准备<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node.js</a>和<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>两个软件。（两个软件安装时一路next即可，但需要根据自己操作系统类型和CPU架构（X86、X64）选择不同版本安装）</p>
+<p><strong>1.</strong> 点击上方的<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a>超链接（建议10以上版本）进行下载即可。成功 后我们可以在cmd窗口输入以下命令：</p>
+<p><img src="/2020/05/21/new-post/node.PNG" alt="node"></p>
+<p>如成功，则显示版本号。</p>
+<p><strong>2.</strong> 继续执行如下指令，安装运行在 Node.js 上的默认包管理工具npm。显示版本号即为正确。</p>
+<p><img src="/2020/05/21/new-post/npm.PNG" alt="npm-1586332090064"></p>
+<p><strong><em>注</em></strong>：目前新版本的node.js中已集成npm软件，且为了提升访问速度，可以把npm的源修改为淘宝镜像，如图：</p>
+<p><img src="/2020/05/21/new-post/%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F.PNG" alt="淘宝镜像"></p>
+<p><strong>3.</strong>点击安装<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>,完成后在CMD窗口中输入下面指令:</p>
+<p>若显示git的各种用法即成功。</p>
+<h4 id="二、安装hexo"><a href="#二、安装hexo" class="headerlink" title="二、安装hexo"></a>二、安装hexo</h4><p><strong>1.****</strong>安装hexo****输入以下命令</p>
+<p><img src="/2020/05/21/new-post/%E5%AE%89%E8%A3%85hexo.PNG" alt="image-20200408160616575"></p>
+<p>安装后若能看到版本号，即成功，如果不放心，可以输入以下指令来核查：</p>
+<p><img src="/2020/05/21/new-post/%E6%96%B0%E5%BB%BAhexo%E6%88%90%E5%8A%9F%E5%9B%BE.PNG" alt="长图"></p>
+<p>2.<strong>创建Hexo博客根目录</strong></p>
+<p><img src="/2020/05/21/new-post/md-blog.PNG" alt="image-20200408161237501"></p>
+<p><strong><em>注：</em></strong>上述语句会在CMD的当前路径下创建一个名为blog的文件夹。该文件夹后面将保存你的各种博客资源及博文，我们把这个目录简称为根目录。建议将目录生成在你常用的位置。</p>
+<p>3.<strong>初始化Hexo博客</strong>：</p>
+<p><strong><em>注意：</em></strong>在初始化Hexo博客之前，必须保证根目录为空,否则无法成功初新建hexo成功图.PNG始化。依次执行下面两条命令</p>
+<p><img src="/2020/05/21/new-post/%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8D%9A%E5%AE%A2.PNG" alt="image-20200408161452077"></p>
+<p>若出现“Start blogging with Hexo!”字符串，则表示初始化成功且可以开始写博客了。如下图：</p>
+<p><img src="/2020/05/21/new-post/%E6%96%B0%E5%BB%BAhexo%E6%88%90%E5%8A%9F%E5%9B%BE.PNG" alt="新建hexo成功图"></p>
+<p>完成到这里，Hexo就已经在我们本机部署成功了。</p>
+<p><strong>4.本地博客预览</strong>：在浏览器中输入上述网址<code>http://localhost:4000/</code>,如果看到新页面则大功告成。下面我们可以看看这博客长什么样。</p>
+<p><img src="/2020/05/21/new-post/hexo%E6%88%90%E5%8A%9F%E5%9B%BE.png" alt="image-20200408162844635"></p>
+<p>这个页面这是hexo系统的默认初始页面哦，后续我们可以自己进行美化和丰富。</p>
+<p><strong>好啦，今天的学习到此结束，欢迎各位小伙伴观看下一篇文章哦！</strong></p>
 
     </div>
 
@@ -206,7 +240,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>رابط المقال: </strong>
-    <a href="http://yoursite.com/2020/04/08/%E6%90%AD%E5%BB%BAhexo%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%80%EF%BC%9A%E5%89%8D%E8%A8%80/" title="搭建hexo连载系列一：前言">http://yoursite.com/2020/04/08/搭建hexo连载系列一：前言/</a>
+    <a href="http://yoursite.com/2020/05/21/new-post/" title="new post">http://yoursite.com/2020/05/21/new-post/</a>
   </li>
   <li class="post-copyright-license">
     <strong>حقوق الملكية:  </strong>حميع المقالات في هذه المدوّنة منشورة تحت رخصة <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> إلا عند التنويه بخلافه.
@@ -222,10 +256,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/04/08/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%BA%8C%EF%BC%9Ahexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/" rel="next" title="连载系列二：hexo博客的本地搭建">
-      连载系列二：hexo博客的本地搭建 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/04/22/%E4%B8%BA%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/" rel="prev" title="为文章添加图片">
+      <i class="fa fa-chevron-left"></i> 为文章添加图片
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/05/21/new-post2/" rel="next" title="new-post2">
+      new-post2 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -292,7 +329,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo简介"><span class="nav-number">1.</span> <span class="nav-text">hexo简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-什么是hexo？hexo的作用"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1.什么是hexo？hexo的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-我们为什么要使用hexo？"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">2.我们为什么要使用hexo？</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#动手实验"><span class="nav-number">1.</span> <span class="nav-text">动手实验</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一·hexo的环境配置"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">一·hexo的环境配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、安装hexo"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">二、安装hexo</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
