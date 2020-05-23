@@ -22,20 +22,20 @@
 
   <meta name="description" content="前言：​    经过上一篇博文的了解，我们已经知道了hexo的作用。我相信一定有小伙伴会有疑问，什么是GitHub？我们为什么要把hexo部署到GitHub上呢？其实，如果我们不对我们编辑好的博文进行部署的话，那么我们的内容就只能留在本地的网址“孤芳自赏”啦，为了能让更多的人浏览到我们的博文，我们需要把内容统统部署到远端，也就是GitHub上。接下来，我们一起去学习一下如何部署吧！ 动手实验一、准">
 <meta property="og:type" content="article">
-<meta property="og:title" content="new-post2">
+<meta property="og:title" content="连载系列三之hexo的乔迁">
 <meta property="og:url" content="http://yoursite.com/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%E4%B9%8Bhexo%E7%9A%84%E4%B9%94%E8%BF%81/index.html">
 <meta property="og:site_name" content="wxx der blog">
 <meta property="og:description" content="前言：​    经过上一篇博文的了解，我们已经知道了hexo的作用。我相信一定有小伙伴会有疑问，什么是GitHub？我们为什么要把hexo部署到GitHub上呢？其实，如果我们不对我们编辑好的博文进行部署的话，那么我们的内容就只能留在本地的网址“孤芳自赏”啦，为了能让更多的人浏览到我们的博文，我们需要把内容统统部署到远端，也就是GitHub上。接下来，我们一起去学习一下如何部署吧！ 动手实验一、准">
 <meta property="og:image" content="http://yoursite.com/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%E4%B9%8Bhexo%E7%9A%84%E4%B9%94%E8%BF%81/%E5%BB%BA%E4%BB%93%E5%BA%93.PNG">
-<meta property="og:image" content="http://yoursite.com/2020/05/21/images/pages.PNG">
-<meta property="og:image" content="http://yoursite.com/2020/05/21/images/%E5%85%AC%E9%92%A5.PNG">
-<meta property="og:image" content="http://yoursite.com/2020/05/21/images/%E5%85%AC%E9%92%A5%E7%BB%A7%E7%BB%AD%E6%AD%A5%E9%AA%A4.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%E4%B9%8Bhexo%E7%9A%84%E4%B9%94%E8%BF%81/pages.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%E4%B9%8Bhexo%E7%9A%84%E4%B9%94%E8%BF%81/%E5%85%AC%E9%92%A5.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%E4%B9%8Bhexo%E7%9A%84%E4%B9%94%E8%BF%81/%E5%85%AC%E9%92%A5%E7%BB%A7%E7%BB%AD%E6%AD%A5%E9%AA%A4.PNG">
 <meta property="og:image" content="http://yoursite.com/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%E4%B9%8Bhexo%E7%9A%84%E4%B9%94%E8%BF%81/%E6%8D%95%E8%8E%B7%E5%85%AC%E9%92%A5%E7%95%8C%E9%9D%A2.PNG">
-<meta property="og:image" content="http://yoursite.com/2020/05/21/images/%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0.PNG">
-<meta property="og:image" content="http://yoursite.com/2020/05/21/images/hexo%E5%92%8Cgit%E5%85%B3%E8%81%94%E7%9A%84%E5%B7%A5%E5%85%B7.PNG">
-<meta property="og:image" content="http://yoursite.com/2020/05/21/images/hexo%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%E4%B8%8A.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%E4%B9%8Bhexo%E7%9A%84%E4%B9%94%E8%BF%81/%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%E4%B9%8Bhexo%E7%9A%84%E4%B9%94%E8%BF%81/hexo%E5%92%8Cgit%E5%85%B3%E8%81%94%E7%9A%84%E5%B7%A5%E5%85%B7.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%E4%B9%8Bhexo%E7%9A%84%E4%B9%94%E8%BF%81/hexo%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%E4%B8%8A.PNG">
 <meta property="article:published_time" content="2020-05-21T08:39:24.000Z">
-<meta property="article:modified_time" content="2020-05-23T07:42:54.106Z">
+<meta property="article:modified_time" content="2020-05-23T08:43:20.851Z">
 <meta property="article:author" content="July">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%E4%B9%8Bhexo%E7%9A%84%E4%B9%94%E8%BF%81/%E5%BB%BA%E4%BB%93%E5%BA%93.PNG">
@@ -53,7 +53,7 @@
   };
 </script>
 
-  <title>new-post2 | wxx der blog</title>
+  <title>连载系列三之hexo的乔迁 | wxx der blog</title>
   
 
 
@@ -172,7 +172,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          new-post2
+          连载系列三之hexo的乔迁
         </h1>
 
         <div class="post-meta">
@@ -189,7 +189,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2020-05-23 15:42:54" itemprop="dateModified" datetime="2020-05-23T15:42:54+08:00">2020-05-23</time>
+                <time title="عُدل: 2020-05-23 16:43:20" itemprop="dateModified" datetime="2020-05-23T16:43:20+08:00">2020-05-23</time>
               </span>
 
           
@@ -213,21 +213,21 @@
 <p><strong>（3)查看仓库配置</strong>：</p>
 <p>​    点击仓库右上角的<strong>settings</strong>选项。向页面下方翻阅，当找到<strong>Github Pages</strong>这一部分有<code>Your site is published at https://username.github.io</code>字样，则表明仓库具备了网页展示功能。提醒下：这个新建的仓库就是用来下面保存Hexo博客的各种资源文件的。</p>
 <blockquote>
-<p><img src="../images/pages.PNG" alt="部署解决办法"></p>
+<p><img src="/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%E4%B9%8Bhexo%E7%9A%84%E4%B9%94%E8%BF%81/pages.PNG" alt="连载系列三之hexo的乔迁"></p>
 </blockquote>
 <p>(4)<strong>获取本机当前用户的SSH公钥</strong>：首先查看在本机的当前用户(操作系统的登录账户)目录下是否已经存在ssh公钥。<code>~</code>表示当前用户的家目录。</p>
-<p><img src="../images/%E5%85%AC%E9%92%A5.PNG" alt="ls-a"></p>
+<p><img src="/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%E4%B9%8Bhexo%E7%9A%84%E4%B9%94%E8%BF%81/%E5%85%AC%E9%92%A5.PNG" alt="连载系列三之hexo的乔迁"></p>
 <p>如果没有发现.ssh目录存在，则表明当前用户还没有ssh密钥，则可以继续下面两步:</p>
-<p><img src="../images/%E5%85%AC%E9%92%A5%E7%BB%A7%E7%BB%AD%E6%AD%A5%E9%AA%A4.PNG" alt="密钥"></p>
+<p><img src="/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%E4%B9%8Bhexo%E7%9A%84%E4%B9%94%E8%BF%81/%E5%85%AC%E9%92%A5%E7%BB%A7%E7%BB%AD%E6%AD%A5%E9%AA%A4.PNG" alt="密钥"></p>
 <p>注：<strong>执行过程中，一直回车即可，直到出现如下界面</strong></p>
-<p><img src="/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%E4%B9%8Bhexo%E7%9A%84%E4%B9%94%E8%BF%81/%E6%8D%95%E8%8E%B7%E5%85%AC%E9%92%A5%E7%95%8C%E9%9D%A2.PNG" alt="密钥(../images/捕获公钥界面.PNG)"></p>
+<p><img src="/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%E4%B9%8Bhexo%E7%9A%84%E4%B9%94%E8%BF%81/%E6%8D%95%E8%8E%B7%E5%85%AC%E9%92%A5%E7%95%8C%E9%9D%A2.PNG" alt="连载系列三之hexo的乔迁"></p>
 <p>图中的<code>~/ssd/.ssh/id_rsa.pub</code>文件就是我们需要的,它保存着我们需要的<code>public key</code>。</p>
 <p><strong>（5）</strong>Github账户添加SSH公钥**：在Github账户的<code>Settings</code>-&gt; <code>SSH and GPG keys</code>下单击<code>New SSH key</code>，将<code>id_rsa.pub</code>文件中的所有内容拷贝进去。</p>
 <h4 id="二、绑定Hexo和Github"><a href="#二、绑定Hexo和Github" class="headerlink" title="二、绑定Hexo和Github"></a>二、绑定Hexo和Github</h4><p>（1)<strong>修改本地站点配置文件</strong>: 打开站点目录（<code>blog\</code>）下的<code>_config.yml</code>文件，将最后一部分修改为如下</p>
-<p><img src="../images/%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0.PNG" alt="部署"></p>
+<p><img src="/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%E4%B9%8Bhexo%E7%9A%84%E4%B9%94%E8%BF%81/%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0.PNG" alt="部署"></p>
 <p><strong>（2）安装关联hexo和git的工具</strong>:</p>
-<p><img src="../images/hexo%E5%92%8Cgit%E5%85%B3%E8%81%94%E7%9A%84%E5%B7%A5%E5%85%B7.PNG" alt="关联工具">如果最后可以看到这个工具的版本号，则表明安装成功</p>
-<h4 id="三、将hexo部署到GitHub上"><a href="#三、将hexo部署到GitHub上" class="headerlink" title="三、将hexo部署到GitHub上"></a>三、将hexo部署到GitHub上</h4><p><img src="../images/hexo%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%E4%B8%8A.PNG" alt="执行hexo d后的页面"></p>
+<p><img src="/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%E4%B9%8Bhexo%E7%9A%84%E4%B9%94%E8%BF%81/hexo%E5%92%8Cgit%E5%85%B3%E8%81%94%E7%9A%84%E5%B7%A5%E5%85%B7.PNG" alt="关联工具">如果最后可以看到这个工具的版本号，则表明安装成功</p>
+<h4 id="三、将hexo部署到GitHub上"><a href="#三、将hexo部署到GitHub上" class="headerlink" title="三、将hexo部署到GitHub上"></a>三、将hexo部署到GitHub上</h4><p><img src="/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%E4%B9%8Bhexo%E7%9A%84%E4%B9%94%E8%BF%81/hexo%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%E4%B8%8A.PNG" alt="执行hexo d后的页面"></p>
 <p><strong>最后一步博客预览</strong>：在浏览器中输入<a href="https://username.github.io,如果看到新页面则大功告成。" target="_blank" rel="noopener">https://username.github.io,如果看到新页面则大功告成。</a></p>
 
     </div>
@@ -244,7 +244,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>رابط المقال: </strong>
-    <a href="http://yoursite.com/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%E4%B9%8Bhexo%E7%9A%84%E4%B9%94%E8%BF%81/" title="new-post2">http://yoursite.com/2020/05/21/连载系列三之hexo的乔迁/</a>
+    <a href="http://yoursite.com/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%89%E4%B9%8Bhexo%E7%9A%84%E4%B9%94%E8%BF%81/" title="连载系列三之hexo的乔迁">http://yoursite.com/2020/05/21/连载系列三之hexo的乔迁/</a>
   </li>
   <li class="post-copyright-license">
     <strong>حقوق الملكية:  </strong>حميع المقالات في هذه المدوّنة منشورة تحت رخصة <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> إلا عند التنويه بخلافه.
@@ -261,8 +261,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%BA%8C%E4%B9%8Bhexo%E7%9A%84%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/" rel="prev" title="new post">
-      <i class="fa fa-chevron-left"></i> new post
+    <a href="/2020/05/21/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%BA%8C%E4%B9%8Bhexo%E7%9A%84%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/" rel="prev" title="连载系列二之hexo的本地搭建">
+      <i class="fa fa-chevron-left"></i> 连载系列二之hexo的本地搭建
     </a></div>
       <div class="post-nav-item"></div>
     </div>
