@@ -20,29 +20,37 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="IF you sing a song,i will sing a long!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wxx der blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="前言：上一节，我们讲的是完成与开发板的连接，并在电脑端能让我们看见开发板的各种“身份信息“，接下来我们就一起更深入的进行探索开发板的其中两个应用：LED和温度的服务及特性。 那么服务与特性又是什么关系呢？ 服务：指开发板上提供的功能，比如我们的开发板上就提供了一个55的LED矩阵，可供我们用户自行操控，显示对应的图形.提到服务，我们不得不提到一个名词——*UUID**（我们可以把它理解成一个人的身">
+<meta property="og:type" content="article">
+<meta property="og:title" content="发现开发板的LED及温度的服务与特性">
+<meta property="og:url" content="http://yoursite.com/2020/06/19/%E5%8F%91%E7%8E%B0%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84LED%E5%8F%8A%E6%B8%A9%E5%BA%A6%E7%9A%84%E6%9C%8D%E5%8A%A1%E4%B8%8E%E7%89%B9%E6%80%A7/index.html">
 <meta property="og:site_name" content="wxx der blog">
-<meta property="og:description" content="IF you sing a song,i will sing a long!">
+<meta property="og:description" content="前言：上一节，我们讲的是完成与开发板的连接，并在电脑端能让我们看见开发板的各种“身份信息“，接下来我们就一起更深入的进行探索开发板的其中两个应用：LED和温度的服务及特性。 那么服务与特性又是什么关系呢？ 服务：指开发板上提供的功能，比如我们的开发板上就提供了一个55的LED矩阵，可供我们用户自行操控，显示对应的图形.提到服务，我们不得不提到一个名词——*UUID**（我们可以把它理解成一个人的身">
+<meta property="og:image" content="http://yoursite.com/2020/06/19/%E5%8F%91%E7%8E%B0%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84LED%E5%8F%8A%E6%B8%A9%E5%BA%A6%E7%9A%84%E6%9C%8D%E5%8A%A1%E4%B8%8E%E7%89%B9%E6%80%A7/startscan.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/06/19/%E5%8F%91%E7%8E%B0%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84LED%E5%8F%8A%E6%B8%A9%E5%BA%A6%E7%9A%84%E6%9C%8D%E5%8A%A1%E4%B8%8E%E7%89%B9%E6%80%A7/%E8%BF%9E%E6%8E%A5%E6%9D%BF%E5%AD%90.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/06/19/%E5%8F%91%E7%8E%B0%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84LED%E5%8F%8A%E6%B8%A9%E5%BA%A6%E7%9A%84%E6%9C%8D%E5%8A%A1%E4%B8%8E%E7%89%B9%E6%80%A7/%E5%8F%AF%E6%8F%90%E4%BE%9B%E7%9A%84%E6%9C%8D%E5%8A%A1.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/06/19/%E5%8F%91%E7%8E%B0%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84LED%E5%8F%8A%E6%B8%A9%E5%BA%A6%E7%9A%84%E6%9C%8D%E5%8A%A1%E4%B8%8E%E7%89%B9%E6%80%A7/%E6%B7%BB%E5%8A%A0%E6%B8%A9%E5%BA%A6%E4%BB%A3%E7%A0%81.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/06/19/%E5%8F%91%E7%8E%B0%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84LED%E5%8F%8A%E6%B8%A9%E5%BA%A6%E7%9A%84%E6%9C%8D%E5%8A%A1%E4%B8%8E%E7%89%B9%E6%80%A7/%E6%95%88%E6%9E%9C%E5%9B%BE.PNG">
+<meta property="article:published_time" content="2020-06-19T07:18:15.000Z">
+<meta property="article:modified_time" content="2020-06-19T09:08:06.189Z">
 <meta property="article:author" content="July">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/06/19/%E5%8F%91%E7%8E%B0%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84LED%E5%8F%8A%E6%B8%A9%E5%BA%A6%E7%9A%84%E6%9C%8D%E5%8A%A1%E4%B8%8E%E7%89%B9%E6%80%A7/startscan.PNG">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2020/06/19/%E5%8F%91%E7%8E%B0%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84LED%E5%8F%8A%E6%B8%A9%E5%BA%A6%E7%9A%84%E6%9C%8D%E5%8A%A1%E4%B8%8E%E7%89%B9%E6%80%A7/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>wxx der blog</title>
+  <title>发现开发板的LED及温度的服务与特性 | wxx der blog</title>
   
 
 
@@ -141,9 +149,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -159,10 +168,9 @@
       <meta itemprop="name" content="wxx der blog">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/19/%E5%8F%91%E7%8E%B0%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84LED%E5%8F%8A%E6%B8%A9%E5%BA%A6%E7%9A%84%E6%9C%8D%E5%8A%A1%E4%B8%8E%E7%89%B9%E6%80%A7/" class="post-title-link" itemprop="url">发现开发板的LED及温度的服务与特性</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          发现开发板的LED及温度的服务与特性
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -186,7 +194,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><strong>前言</strong>：上一节，我们讲的是完成与开发板的连接，并在电脑端能让我们看见开发板的各种“身份信息“，接下来我们就一起更深入的进行探索开发板的其中两个应用：LED和温度的服务及特性。</p>
+        <p><strong>前言</strong>：上一节，我们讲的是完成与开发板的连接，并在电脑端能让我们看见开发板的各种“身份信息“，接下来我们就一起更深入的进行探索开发板的其中两个应用：LED和温度的服务及特性。</p>
 <p>那么服务与特性又是什么关系呢？</p>
 <p><strong>服务</strong>：指开发板上提供的功能，比如我们的开发板上就提供了一个5<em>5的LED矩阵，可供我们用户自行操控，显示对应的图形.提到服务，我们不得不提到一个名词——*</em>UUID**（我们可以把它理解成一个人的身份证）,一个服务对应一个唯一且固定的UUID号,我们正是通过这个UUID才可以在众多服务中准确地锁定我们想要的内容。</p>
 <p><strong>特性</strong>：特性是属于服务的，服务只是一个大的范畴，而特性更加明确的让我们知道我们可以具体做哪些东西。一个服务可对应多个特性。</p>
@@ -210,508 +218,58 @@
 <p><img src="/2020/06/19/%E5%8F%91%E7%8E%B0%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84LED%E5%8F%8A%E6%B8%A9%E5%BA%A6%E7%9A%84%E6%9C%8D%E5%8A%A1%E4%B8%8E%E7%89%B9%E6%80%A7/%E6%95%88%E6%9E%9C%E5%9B%BE.PNG" alt></p>
 <p>8.经过对板子源代码的修改后，对比官方文档的UUID后，我们已经可以看到我们想要的LED及温度的服务与特性，到此我们的任务就完成啦！</p>
 
-      
     </div>
 
     
     
     
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/16/%E7%BD%91%E9%A1%B5%E8%AF%BB%E5%8F%96%E5%BC%80%E5%8F%91%E6%9D%BF%E5%90%8D%E7%A7%B0+%E6%8E%A7%E5%88%B6led%E7%81%AF%E7%9A%84%E4%BA%AE%E7%81%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/rzRYdsXhm2OY.jpg">
-      <meta itemprop="name" content="July">
-      <meta itemprop="description" content="IF you sing a song,i will sing a long!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wxx der blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/16/%E7%BD%91%E9%A1%B5%E8%AF%BB%E5%8F%96%E5%BC%80%E5%8F%91%E6%9D%BF%E5%90%8D%E7%A7%B0+%E6%8E%A7%E5%88%B6led%E7%81%AF%E7%9A%84%E4%BA%AE%E7%81%AD/" class="post-title-link" itemprop="url">网页读取开发板名称+控制ledd灯的亮灭</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-06-16 19:00:48 / Modified: 19:32:40" itemprop="dateCreated datePublished" datetime="2020-06-16T19:00:48+08:00">2020-06-16</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>前言</strong>：由文章标题我们就可以看出我们将要完成什么任务，下面我们直奔主题。标题的两个任务我们都要基于开发板是处于<strong>已连接</strong>的状态，具体连接方法上一篇已有介绍，不了解的小伙伴自行查看。</p>
-<p>1.开发板已连接后，我们接下来想<strong>控制LED灯的亮灭</strong>。点击下图中的<strong>Randomise LEDs</strong>按钮</p>
-<p><img src="/2020/06/16/%E7%BD%91%E9%A1%B5%E8%AF%BB%E5%8F%96%E5%BC%80%E5%8F%91%E6%9D%BF%E5%90%8D%E7%A7%B0+%E6%8E%A7%E5%88%B6led%E7%81%AF%E7%9A%84%E4%BA%AE%E7%81%AD/1.jpg" alt></p>
-<p>点击之后，我们就会看到开发板上面的<strong>LED矩阵</strong>开始出现变化，变成了<strong>随机的图案</strong>。并且我们<strong>每点击一次，矩阵就会变化一次图形</strong>。所以这就实现了任意控制LED灯的亮灭。</p>
-<p>点击两次的效果分别如下</p>
-<p><img src="/2020/06/16/%E7%BD%91%E9%A1%B5%E8%AF%BB%E5%8F%96%E5%BC%80%E5%8F%91%E6%9D%BF%E5%90%8D%E7%A7%B0+%E6%8E%A7%E5%88%B6led%E7%81%AF%E7%9A%84%E4%BA%AE%E7%81%AD/2.jpg" alt></p>
-<p><img src="/2020/06/16/%E7%BD%91%E9%A1%B5%E8%AF%BB%E5%8F%96%E5%BC%80%E5%8F%91%E6%9D%BF%E5%90%8D%E7%A7%B0+%E6%8E%A7%E5%88%B6led%E7%81%AF%E7%9A%84%E4%BA%AE%E7%81%AD/3.jpg" alt></p>
-<p>从这两张图，我们是能够看出细微的变化的。</p>
-<p>2.接下来，我们要完成<strong>读取开发板名称并显示</strong>的功能。点击<strong>Read Model number</strong>按钮。成功后，将在页面最下方显示，microbit板子的名字就显示在页面上啦。</p>
-<p><img src="/2020/06/16/%E7%BD%91%E9%A1%B5%E8%AF%BB%E5%8F%96%E5%BC%80%E5%8F%91%E6%9D%BF%E5%90%8D%E7%A7%B0+%E6%8E%A7%E5%88%B6led%E7%81%AF%E7%9A%84%E4%BA%AE%E7%81%AD/4.jpg" alt></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/16/%E8%93%9D%E7%89%99%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84%E5%BA%94%E7%94%A8-%E5%BA%8F%E8%A8%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/rzRYdsXhm2OY.jpg">
-      <meta itemprop="name" content="July">
-      <meta itemprop="description" content="IF you sing a song,i will sing a long!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wxx der blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/16/%E8%93%9D%E7%89%99%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84%E5%BA%94%E7%94%A8-%E5%BA%8F%E8%A8%80/" class="post-title-link" itemprop="url">蓝牙开发板的应用--序言</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-06-16 16:19:45 / Modified: 16:38:32" itemprop="dateCreated datePublished" datetime="2020-06-16T16:19:45+08:00">2020-06-16</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>在本篇博文之前，咱们讨论的都是关于博客的搭建，部署以及简单后期的美化问题。那么接下来，咱们就要进入到一个全新的板块啦。那么这位伙计是谁呢？答案是，，当当，我们的蓝牙开发板。这里我们所用到的是bbc公司的microbit开发板。蓝牙应用在生活的方方面面。这里，我们就将利用这块开发板，完成与电脑的“互动”，接下来就让我们一起进行探索去吧！</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/16/microbit%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84%E8%BF%9E%E6%8E%A5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/rzRYdsXhm2OY.jpg">
-      <meta itemprop="name" content="July">
-      <meta itemprop="description" content="IF you sing a song,i will sing a long!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wxx der blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/16/microbit%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84%E8%BF%9E%E6%8E%A5/" class="post-title-link" itemprop="url">microbit开发板的连接</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-06-16 16:17:00 / Modified: 17:46:11" itemprop="dateCreated datePublished" datetime="2020-06-16T16:17:00+08:00">2020-06-16</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>本篇文章是介绍蓝牙开发板与电脑“互动”的基础步骤，既然要互动，那我们就必须让电脑能够识别对方是谁。</p>
-<p>1.首先，我们要将板子通过<strong>USB数据线</strong>连接到电脑的USB端口上。</p>
-<p>2.完成连接，可不止只需要硬件的连接哦，这里我们还需要软件的代码支持。我们在<strong>Visual Studio Code</strong>软件中输入以下代码：</p>
-<!--代码部分-->
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">        <span class="keyword">var</span>    selected_device;</span><br><span class="line">        <span class="keyword">var</span>    selected_server;</span><br><span class="line">        <span class="keyword">var</span>    connected = <span class="literal">false</span>;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">discoverOrdisconnectDevices</span>(<span class="params"></span>)//发现或断开函数</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"discoverDeviceOrDisconnect"</span>);</span><br><span class="line">            <span class="keyword">if</span>(!connected)</span><br><span class="line">                discoverDevices();</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                selected_device.gatt.disconnect();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">onDisconnected</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"onDisconnected"</span>);</span><br><span class="line">            resetUI();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">discoverDevices</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"discoverDevices"</span>);<span class="comment">//console.log控制台打印输出</span></span><br><span class="line">            <span class="keyword">var</span> options = &#123;<span class="attr">acceptAllDevices</span>:<span class="literal">true</span>&#125;<span class="comment">//发现所有周边蓝牙设备</span></span><br><span class="line">            navigator.bluetooth.requestDevice(options)<span class="comment">//Navigator对象：包含有关浏览器的信息</span></span><br><span class="line">            .then(<span class="function"><span class="params">device</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'&gt; Name:'</span> + device.name);</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'&gt; Id:'</span> + device.id);</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'&gt; Connected:'</span> + device.gatt.connected);</span><br><span class="line">                selected_device = device;</span><br><span class="line">                <span class="built_in">console</span>.log(selected_device);</span><br><span class="line">                connect();</span><br><span class="line">            &#125;)</span><br><span class="line">            .catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">                alert(<span class="string">'ERROR'</span> +error);</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'ERROR'</span> +error);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">connect</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"connecting"</span>);</span><br><span class="line">            selected_device.gatt.connect()</span><br><span class="line">            .then(</span><br><span class="line">                <span class="function"><span class="keyword">function</span> (<span class="params">server</span>)</span></span><br><span class="line"><span class="function">                </span>&#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">"Connected to"</span> + server.device.id);</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">"Connected "</span> + server.connected);</span><br><span class="line">                    selected_device.addEventListener(<span class="string">'gattseverdisconnected'</span>,onDisconnected);</span><br><span class="line">                    connected_server =server;</span><br><span class="line">                    setConnectedStatus(<span class="literal">true</span>);</span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="function"><span class="keyword">function</span> (<span class="params">error</span>)</span></span><br><span class="line"><span class="function">                </span>&#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">"ERROR:could not connct-"</span> + error);</span><br><span class="line">                   alert(<span class="string">"ERROR:could not connct-"</span> + error);</span><br><span class="line">                   setConnectedStatus(<span class="literal">false</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            );</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">setConnectedStatus</span>(<span class="params">status</span>)</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            connected = status;</span><br><span class="line">            <span class="built_in">document</span>.getElementById(<span class="string">'Status_connected'</span>).innerHTML = status;</span><br><span class="line">            <span class="keyword">if</span>(status == <span class="literal">true</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">document</span>.getElementById(<span class="string">'btn_scan'</span>).innerHTML = <span class="string">"Disconnect"</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">document</span>.getElementById(<span class="string">'btn_scan'</span>).innerHTML = <span class="string">"Discover Devices"</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">resetUI</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line">        &lt;<span class="regexp">/script&gt; </span></span><br><span class="line"><span class="regexp">    &lt;/</span>head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;h2&gt;</span><br><span class="line">            Status</span><br><span class="line">        &lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">        &lt;table border="1"&gt;</span></span><br><span class="line"><span class="regexp">            &lt;tr&gt;</span></span><br><span class="line"><span class="regexp">                &lt;td&gt;    &lt;b&gt;Connected&lt;/</span>b&gt;    &lt;<span class="regexp">/td&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;td id=<span class="string">"Status_connected"</span>&gt;<span class="literal">false</span>&lt;<span class="regexp">/td&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>tr&gt;</span><br><span class="line">        &lt;<span class="regexp">/table&gt;</span></span><br><span class="line"><span class="regexp">        &lt;h2&gt;</span></span><br><span class="line"><span class="regexp">            Device Discovery</span></span><br><span class="line"><span class="regexp">        &lt;/</span>h2&gt;</span><br><span class="line">        &lt;button id = <span class="string">"btn_scan"</span> onclick=<span class="string">"discoverDevices()"</span>&gt;Start scan&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>完成以上代码的输入后,我们将其保存为<strong>.html</strong>文件,并且使用<strong>谷歌浏览器</strong>打开.我们将看到如下界面:</p>
-<p><img src="/2020/06/16/microbit%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84%E8%BF%9E%E6%8E%A5/1.jpg" alt></p>
-<p>3.接下来我们点击如图上的<strong>Start Scan</strong>按钮,它的意思是开始扫描,点击之后,电脑就会自动的扫描周边的蓝牙设备.点击完成,我们将看到:</p>
-<p><img src="/2020/06/16/microbit%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84%E8%BF%9E%E6%8E%A5/2.jpg" alt></p>
-<p>4.此时,我们看到,检测到的蓝牙设备的列表中,已经出现了我们的开发板名称:<strong>BBC micro:bit</strong>,我们只需要点击该选项,然后点击下方的<strong>配对</strong>按钮即可.操作如下:</p>
-<p><img src="/2020/06/16/microbit%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84%E8%BF%9E%E6%8E%A5/3.jpg" alt></p>
-<p>4.完成后,我们将看到:</p>
-<p><img src="/2020/06/16/microbit%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84%E8%BF%9E%E6%8E%A5/4.jpg" alt></p>
-<p>从图上我们可以看到板子的连接状况.为<strong>已连接</strong></p>
-<p>5.连接成功后,我们将看到板子显示<strong>字母 ‘C’</strong></p>
-<p><img src="/2020/06/16/microbit%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84%E8%BF%9E%E6%8E%A5/5.jpg" alt></p>
-<p>6.反之,如果我们想<strong>断开连接,</strong>只需要点击下方的<strong>Disconnect</strong>按钮.点击后,我们看到板子显示<strong>字母 ‘D’</strong>:</p>
-<p><img src="/2020/06/16/microbit%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84%E8%BF%9E%E6%8E%A5/6.jpg" alt></p>
-<p>到这里,我们初步的连接就完成啦!</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/21/new-post2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/rzRYdsXhm2OY.jpg">
-      <meta itemprop="name" content="July">
-      <meta itemprop="description" content="IF you sing a song,i will sing a long!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wxx der blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/21/new-post2/" class="post-title-link" itemprop="url">new-post2</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-05-21 16:39:24" itemprop="dateCreated datePublished" datetime="2020-05-21T16:39:24+08:00">2020-05-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-31 15:35:30" itemprop="dateModified" datetime="2020-05-31T15:35:30+08:00">2020-05-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>​    经过上一篇博文的了解，我们已经知道了hexo的作用。我相信一定有小伙伴会有疑问，什么是GitHub？我们为什么要把hexo部署到GitHub上呢？其实，如果我们不对我们编辑好的博文进行部署的话，那么我们的内容就只能留在本地的网址“<strong><em>孤芳自赏</em></strong>”啦，为了能让更多的人浏览到我们的博文，我们需要把内容统统部署到<strong>远端</strong>，也就是GitHub上。接下来，我们一起去学习一下如何部署吧！</p>
-<h3 id="动手实验"><a href="#动手实验" class="headerlink" title="动手实验"></a>动手实验</h3><h4 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h4><p><strong>（1）</strong>在进行部署前，我们需要先注册一个GitHub的账号哦，这里小伙伴们自行官网搜索注册即可</p>
-<p>  <strong><em>注：</em></strong>右上角的<strong>sign in</strong>是登录，<strong>sign up</strong>是注册。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/21/new-post2/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>July
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://yoursite.com/2020/06/19/%E5%8F%91%E7%8E%B0%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84LED%E5%8F%8A%E6%B8%A9%E5%BA%A6%E7%9A%84%E6%9C%8D%E5%8A%A1%E4%B8%8E%E7%89%B9%E6%80%A7/" title="发现开发板的LED及温度的服务与特性">http://yoursite.com/2020/06/19/发现开发板的LED及温度的服务与特性/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/21/new-post/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/rzRYdsXhm2OY.jpg">
-      <meta itemprop="name" content="July">
-      <meta itemprop="description" content="IF you sing a song,i will sing a long!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wxx der blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/21/new-post/" class="post-title-link" itemprop="url">new-post</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-05-21 15:53:24" itemprop="dateCreated datePublished" datetime="2020-05-21T15:53:24+08:00">2020-05-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-31 15:37:01" itemprop="dateModified" datetime="2020-05-31T15:37:01+08:00">2020-05-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="动手实验"><a href="#动手实验" class="headerlink" title="动手实验"></a>动手实验</h1><h4 id="一·hexo的环境配置"><a href="#一·hexo的环境配置" class="headerlink" title="一·hexo的环境配置"></a>一·hexo的环境配置</h4><p> 配置hexo的运行环境，我们需要准备<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node.js</a>和<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>两个软件。（两个软件安装时一路next即可，但需要根据自己操作系统类型和CPU架构（X86、X64）选择不同版本安装）</p>
-<p><strong>1.</strong> 点击上方的<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a>超链接（建议10以上版本）进行下载即可。成功 后我们可以在cmd窗口输入以下命令：</p>
-<p><img src="/2020/05/21/new-post/node.PNG" alt="node"></p>
-<p>如成功，则显示版本号。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/21/new-post/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/16/%E7%BD%91%E9%A1%B5%E8%AF%BB%E5%8F%96%E5%BC%80%E5%8F%91%E6%9D%BF%E5%90%8D%E7%A7%B0+%E6%8E%A7%E5%88%B6led%E7%81%AF%E7%9A%84%E4%BA%AE%E7%81%AD/" rel="prev" title="网页读取开发板名称+控制ledd灯的亮灭">
+      <i class="fa fa-chevron-left"></i> 网页读取开发板名称+控制ledd灯的亮灭
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/22/%E4%B8%BA%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/rzRYdsXhm2OY.jpg">
-      <meta itemprop="name" content="July">
-      <meta itemprop="description" content="IF you sing a song,i will sing a long!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wxx der blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/22/%E4%B8%BA%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/" class="post-title-link" itemprop="url">为文章添加图片</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-04-22 16:26:25 / Modified: 17:40:03" itemprop="dateCreated datePublished" datetime="2020-04-22T16:26:25+08:00">2020-04-22</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="咳咳同资们，开始上课了"><a href="#咳咳同资们，开始上课了" class="headerlink" title="咳咳同资们，开始上课了"></a><strong>咳咳同资们，开始上课了</strong></h4><p>​    在此之前，如果看过前几篇博文的同志们，相信一点能够发现我的博客里出现的一些小问题。大家刚看到我的博文时，看到的默认为页面为左侧导航栏中（ <strong>“Startseite” 首页</strong>）的内容，这时几篇博文的文字和图片都是可以正常显示的，而如果我们要想通过（ <strong>“Archiv“ 目录</strong>）来查看博文时，却看不到图片。嘿嘿，这里要告诉大家，由于本人还是个小白，之前刚操作时出现了一些技术上的问题，那么从这边博文开始，<strong>本人决定痛改前非，重新做文章，教你们正确的方法</strong>！所以，，，<strong>前面的文章你们就先在首页里观看</strong>啦！感谢！</p>
-<p><strong><em>经过测试，发现如下方法有效</em></strong>：</p>
-<p>1、首先把blog目录下的_config.yml里的psot_asset_folder:设置为true</p>
-<p>2、在blog目录下执行git命令:  <strong>npm install hexo-asset-image –save</strong></p>
-<p>3、在git bash here的窗口中执行hexo n “文章名”，此时在post文件夹下看见与文章名同名的文件，且typora自动打开<br>4、将想要上传的图片放到刚刚自动生成的文件夹下<br>5、接下来按照下列格式，写在typora中：</p>
-<p><img src="/2020/04/22/%E4%B8%BA%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/%E6%8D%95%E8%8E%B7.PNG" alt="你想要输入的替代文字"></p>
-<p>做完上面保存typora，然后执行hexo的三步骤hexo clean  g   d  即可看见图片。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/08/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%80%E4%B9%8Bhexo%E7%9A%84%E7%AE%80%E4%BB%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/rzRYdsXhm2OY.jpg">
-      <meta itemprop="name" content="July">
-      <meta itemprop="description" content="IF you sing a song,i will sing a long!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wxx der blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/08/%E8%BF%9E%E8%BD%BD%E7%B3%BB%E5%88%97%E4%B8%80%E4%B9%8Bhexo%E7%9A%84%E7%AE%80%E4%BB%8B/" class="post-title-link" itemprop="url">连载系列一之hexo的简介</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-04-08 14:51:26 / Modified: 23:05:48" itemprop="dateCreated datePublished" datetime="2020-04-08T14:51:26+08:00">2020-04-08</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="hexo简介"><a href="#hexo简介" class="headerlink" title="hexo简介"></a>hexo简介</h1><h4 id="1-什么是hexo？hexo的作用"><a href="#1-什么是hexo？hexo的作用" class="headerlink" title="1.什么是hexo？hexo的作用"></a>1.什么是hexo？hexo的作用</h4><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href>Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<h4 id="2-我们为什么要使用hexo？"><a href="#2-我们为什么要使用hexo？" class="headerlink" title="2.我们为什么要使用hexo？"></a>2.我们为什么要使用hexo？</h4><p>在现在这样一个网络时代，每个人都有言论自由的权力。我们可以随心地在网上分享自己的生活和学习等等。这不得不基于一个平台。有了hexo这个框架，我们就可以搭建一个属于自己的博客，分布在不同地区的人，也可以通过你的网址访问到你的主页。从而达到资源共享的目的。在这里，我们可以自由的交流和学习，所以拥有一个博客很必要！</p>
-<p><strong>那么接下来，感兴趣的小伙伴就一起跟着我的步伐，一起开启我们的博客学习之旅吧！</strong></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
 
           </div>
           
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80OTU0MC8yNjAzMQ=="></div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -758,6 +316,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-LED的服务与特性"><span class="nav-number">1.</span> <span class="nav-text">一.LED的服务与特性</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -865,17 +424,22 @@
   
 
   
-  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
-  <script>
-      window.addEventListener('load', () => {
-      quicklink({
-        timeout : 3000,
-        priority: true,
-        ignores : [uri => uri.includes('#'),uri => uri === 'http://yoursite.com/',]
-      });
-      });
-  </script>
 
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
 
 
 <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
